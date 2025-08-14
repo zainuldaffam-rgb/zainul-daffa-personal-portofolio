@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zainul Daffa Muttaqin — Portofolio</title>
+  <meta name="description" content="Portofolio Zainul Daffa Muttaqin — Mahasiswa Manajemen Pendidikan Islam di IAI Imsya Indonesia. Calon mentor & konsultan Pendidikan Islam." />
+  <meta name="theme-color" content="#0b2a5a" />
+  <meta property="og:title" content="Zainul Daffa Muttaqin — Portofolio" />
+  <meta property="og:description" content="Mahasiswa IAI Imsya Indonesia, Manajemen Pendidikan Islam. Calon mentor & konsultan Pendidikan Islam." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --navy:#0b2a5a; /* navy utama */
+      --navy-600:#113b7a;
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#6b7280;
+      --card:#f7f8fb;
+      --ring: rgba(17,59,122,.25);
+    }
+    /* Dark mode */
+    :root.dark{
+      --bg:#0b1220;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --card:#0f1a2e;
+    }
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background:var(--bg); color:var(--text);
+    }
+    .container{max-width:1100px;margin-inline:auto;padding:24px}
+    header{
+      position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 75%, transparent);
+      border-bottom:1px solid color-mix(in oklab, var(--text) 12%, transparent);
+      z-index:50;
+    }
+    nav{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:12px 24px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--navy)}
+    .nav-links{display:flex;gap:14px;flex-wrap:wrap}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:.95rem}
+    .nav-links a:hover{color:var(--text)}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:1px solid color-mix(in oklab, var(--navy) 70%, var(--text) 30%);
+      background: var(--navy); color:white; padding:10px 14px; border-radius:12px; text-decoration:none; font-weight:600; box-shadow:0 6px 18px -8px var(--ring)}
+    .btn.outline{background:transparent;color:var(--navy); border-color:var(--navy)}
+    .btn.ghost{background:transparent;border-color:transparent;color:var(--muted)}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding:48px 24px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}}
+    .tag{display:inline-flex;gap:6px;align-items:center;font-size:.85rem;color:var(--navy);background: color-mix(in oklab, var(--navy) 10%, transparent); padding:6px 10px; border-radius:999px;border:1px solid color-mix(in oklab, var(--navy) 25%, transparent)}
+    h1{font-size:clamp(1.8rem, 2.8vw + 1rem, 3rem);line-height:1.05;margin:10px 0}
+    .lead{font-size:1.05rem;color:var(--muted);max-width:60ch}
+    .hero-card{background:var(--card);border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:18px;padding:18px}
+    .hero-grid{display:grid;grid-template-columns:80px 1fr;gap:16px;align-items:center}
+    .avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg, var(--navy), #6b8ecf); display:grid;place-items:center;color:white;font-weight:800;}
+
+    /* Sections */
+    section{padding:36px 24px}
+    .card{background:var(--card);border:1px solid color-mix(in oklab, var(--text) 10%, transparent);border-radius:18px;padding:22px}
+    .grid{display:grid;gap:16px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+    .kpi{display:flex;align-items:center;gap:10px;color:var(--muted)}
+    .kpi span{font-weight:700;color:var(--text)}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid color-mix(in oklab, var(--text) 15%, transparent);font-size:.85rem;color:var(--muted)}
+
+    /* Project cards */
+    .project{display:grid;grid-template-columns:1fr 1.2fr;gap:18px}
+    .project img{width:100%;height:180px;object-fit:cover;border-radius:14px;border:1px solid color-mix(in oklab, var(--text) 10%, transparent)}
+    @media (max-width:900px){.project{grid-template-columns:1fr}.project img{height:200px}}
+
+    /* Footer */
+    footer{padding:36px 24px;color:var(--muted);text-align:center;border-top:1px dashed color-mix(in oklab, var(--text) 12%, transparent)}
+
+    /* Utilities */
+    .mt-8{margin-top:32px}.mt-4{margin-top:16px}.mb-0{margin-bottom:0}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  </style>
+  <script>
+    // Prefer dark mode based on system, allow toggle
+    const setTheme = (mode) => { document.documentElement.classList.toggle('dark', mode === 'dark'); localStorage.setItem('theme', mode); }
+    const initTheme = () => {
+      const saved = localStorage.getItem('theme');
+      if(saved){ setTheme(saved); }
+      else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){ setTheme('dark'); }
+    }
+    document.addEventListener('DOMContentLoaded', initTheme);
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Navigasi utama">
+      <div class="brand"><span class="dot" aria-hidden="true"></span> <span>Zainul Daffa Muttaqin</span></div>
+      <div class="nav-links" role="navigation">
+        <a href="#tentang">Tentang</a>
+        <a href="#proyek">Proyek</a>
+        <a href="#pengalaman">Pengalaman</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <div class="row">
+        <button class="btn outline" onclick="setTheme(document.documentElement.classList.contains('dark')?'light':'dark')" aria-label="Toggle tema">🌓 Tema</button>
+        <a class="btn" href="https://wa.me/6282340060491?text=Assalamu'alaikum%20Zainul%2C%20saya%20tertarik%20untuk%20bekerja%20sama." target="_blank" rel="noopener">Hubungi via WA</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="container hero" id="home">
+      <div>
+        <span class="tag">Mahasiswa · Manajemen Pendidikan Islam</span>
+        <h1>Assalamu'alaikum, saya <span style="color:var(--navy)">Zainul Daffa Muttaqin</span>.</h1>
+        <p class="lead">Mahasiswa IAI Imsya Indonesia (Manajemen Pendidikan Islam). Saya ingin berkarier sebagai <strong>mentor</strong> dan <strong>konsultan</strong> di bidang Pendidikan Islam—mendorong pengembangan pendidikan Islam di seluruh penjuru negeri Islam demi kebahagiaan di dunia dan akhirat.</p>
+        <div class="row mt-8">
+          <a class="btn" href="#kontak">Ajak Kolaborasi</a>
+          <a class="btn outline" href="#proyek">Lihat Proyek</a>
+        </div>
+        <div class="row mt-4 kpi" aria-label="Lokasi dan sosial">
+          <span>📍 Pekanbaru</span>
+          <a class="pill" href="https://instagram.com/zainuldaffa.s" target="_blank" rel="noopener">Instagram</a>
+          <a class="pill" href="https://tiktok.com/@zainul.daffa" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div class="avatar" aria-hidden="true">ZD</div>
+          <div>
+            <h3 class="mb-0">Fokus Saya</h3>
+            <p class="lead" style="font-size:.98rem">Mentoring belajar, kurikulum pendidikan Islam, komunikasi dakwah digital, dan pengelolaan kegiatan/organisasi.</p>
+            <div class="row mt-4">
+              <span class="pill">VS Code</span>
+              <span class="pill">Canva</span>
+              <span class="pill">CapCut</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang" class="container">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Tentang Saya</h2>
+          <p>Sebagai mahasiswa Manajemen Pendidikan Islam di IAI Imsya Indonesia, saya tertarik mengembangkan ekosistem belajar yang efektif, berakhlak, dan relevan dengan tantangan zaman. Saya antusias menggabungkan <em>multimedia</em> dan <em>organizing</em> acara untuk memperluas jangkauan dakwah dan pendidikan.</p>
+          <p class="mt-4">Tujuan saya: membina pelajar dan lembaga agar memiliki sistem pembelajaran yang berdampak, serta menjadi konsultan yang membantu perencanaan, eksekusi, dan evaluasi program Pendidikan Islam.</p>
+        </div>
+        <div class="card">
+          <h2>Nilai & Misi</h2>
+          <ul>
+            <li>Mencari kebahagiaan maksimal di dunia & akhirat melalui pendidikan Islam.</li>
+            <li>Kolaborasi dengan komunitas dan lembaga pendidikan untuk efek berantai kebaikan.</li>
+            <li>Transparansi proses, akuntabilitas hasil, dan pengembangan berkelanjutan.</li>
+          </ul>
+          <div class="row mt-4">
+            <a class="btn" href="#kontak">Diskusikan Kebutuhan Anda</a>
+            <a class="btn ghost" href="#pengalaman">Lihat Pengalaman</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyek -->
+    <section id="proyek" class="container">
+      <h2>Proyek & Kebiasaan</h2>
+      <div class="grid">
+        <!-- Proyek 1 -->
+        <div class="card project">
+          <img src="https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=1200&auto=format&fit=crop" alt="Ilustrasi konten dakwah digital"/>
+          <div>
+            <h3>Postingan Dakwah di Instagram</h3>
+            <p>Menyusun konten dakwah singkat dan visual untuk edukasi harian di Instagram <a href="https://instagram.com/zainuldaffa.s" target="_blank" rel="noopener">@zainuldaffa.s</a>.</p>
+            <ul>
+              <li>Riset topik dan dalil singkat, desain di Canva, editing ringan di CapCut.</li>
+              <li>Konsistensi unggah dan interaksi dengan audiens.</li>
+              <li>Format: carousel, reels, dan story tanya-jawab.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Proyek 2 -->
+        <div class="card project">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop" alt="Ilustrasi membaca buku"/>
+          <div>
+            <h3>Membaca 20 Halaman Buku per Hari</h3>
+            <p>Komitmen penguatan literasi dan pengetahuan keislaman melalui kebiasaan membaca harian.</p>
+            <ul>
+              <li>Catatan ringkas untuk disarikan menjadi konten.</li>
+              <li>Fokus pada manajemen pendidikan, akhlak, dan kepemimpinan.</li>
+              <li>Target konsisten dan evaluasi bulanan.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pengalaman -->
+    <section id="pengalaman" class="container">
+      <h2>Pengalaman</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Multimedia & Organizing Acara — OSIS (Pesantren)</h3>
+          <p class="muted">Peran: Tim Multimedia & Kepanitiaan</p>
+          <ul>
+            <li>Mengelola dokumentasi, publikasi acara, dan teknis audio-visual.</li>
+            <li>Koordinasi panitia & susunan acara untuk kegiatan santri.</li>
+            <li>Meningkatkan partisipasi peserta melalui komunikasi yang efektif.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pendidikan -->
+    <section id="pendidikan" class="container">
+      <h2>Pendidikan</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>IAI Imsya Indonesia</h3>
+          <p>Manajemen Pendidikan Islam — Mahasiswa</p>
+        </div>
+        <div class="card">
+          <h3>MA Al Ishlah Kampar</h3>
+          <p>Alumni</p>
+        </div>
+        <div class="card">
+          <h3>MTW Al Ishlah Kampar</h3>
+          <p>Alumni</p>
+        </div>
+        <div class="card">
+          <h3>SDN 001 Lipat Kain</h3>
+          <p>Alumni</p>
+        </div>
+        <div class="card">
+          <h3>Taman Kanak-kanak</h3>
+          <p>Alumni</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="container">
+      <div class="grid grid-2">
+        <div class="card">
+          <h2>Hubungi Saya</h2>
+          <p>Siap berdiskusi terkait mentoring, pembuatan konten dakwah, atau pengembangan program Pendidikan Islam.</p>
+          <ul>
+            <li>📧 Email: <a href="mailto:zainuldaffam@gmail.com">zainuldaffam@gmail.com</a></li>
+            <li>📱 WhatsApp: <a href="https://wa.me/6282340060491" target="_blank" rel="noopener">+62 823-4006-0491</a></li>
+            <li>📍 Lokasi: Pekanbaru</li>
+            <li>🟣 Instagram: <a href="https://instagram.com/zainuldaffa.s" target="_blank" rel="noopener">@zainuldaffa.s</a></li>
+            <li>🎵 TikTok: <a href="https://tiktok.com/@zainul.daffa" target="_blank" rel="noopener">@zainul.daffa</a></li>
+          </ul>
+          <div class="row mt-8">
+            <a class="btn" href="https://wa.me/6282340060491?text=Assalamu'alaikum%20Zainul%2C%20saya%20tertarik%20untuk%20bekerja%20sama." target="_blank" rel="noopener">Kirim WhatsApp</a>
+            <a class="btn outline" href="#home">Kembali ke Atas</a>
+          </div>
+        </div>
+        <form class="card" onsubmit="event.preventDefault(); alert('Terima kasih, pesan Anda sudah terkirim (simulasi). Silakan gunakan email/WA untuk respon cepat).')">
+          <h2>Form Kontak (Demo)</h2>
+          <label>Nama<br><input required placeholder="Nama Anda" style="width:100%;padding:10px;border-radius:10px;border:1px solid color-mix(in oklab, var(--text) 15%, transparent)"></label>
+          <div class="mt-4"></div>
+          <label>Email/WA<br><input required placeholder="email@contoh.com / 08xxxxxxxxxx" style="width:100%;padding:10px;border-radius:10px;border:1px solid color-mix(in oklab, var(--text) 15%, transparent)"></label>
+          <div class="mt-4"></div>
+          <label>Pesan<br><textarea required rows="5" placeholder="Tulis kebutuhan Anda..." style="width:100%;padding:10px;border-radius:10px;border:1px solid color-mix(in oklab, var(--text) 15%, transparent)"></textarea></label>
+          <div class="mt-4"></div>
+          <button class="btn" type="submit">Kirim</button>
+          <p class="muted" style="color:var(--muted);font-size:.9rem;margin-top:10px">Catatan: Form ini demo statis. Di hosting nanti bisa dihubungkan ke layanan form (mis. Formspree/Netlify Forms).</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="y"></span> Zainul Daffa Muttaqin — Dibuat ringan, responsif, dan ramah SEO. Tema navy minimalis.</p>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
